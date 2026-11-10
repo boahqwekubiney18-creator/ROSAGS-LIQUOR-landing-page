@@ -3,83 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROSAGS LIQUOR</title>
+
+<title>ROSAGS LIQUOR | Quality Beverages</title>
+
+<meta name="description" content="Welcome to ROSAGS LIQUOR. Explore our wines, champagnes, soft drinks and bottled water.">
 
 <style>
 * {
-box-sizing: border-box;
 margin: 0;
 padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
 }
 
 body {
 font-family: Arial, sans-serif;
-background: white;
 color: #333;
+background: #fff;
+line-height: 1.6;
 }
 
 header {
 background: #b90000;
 color: white;
-padding: 22px;
-text-align: center;
+padding: 20px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 15px;
 }
 
 .logo {
-font-size: 28px;
+font-size: 27px;
 font-weight: bold;
-margin-bottom: 15px;
+letter-spacing: 1px;
+}
+
+nav {
+display: flex;
+flex-wrap: wrap;
+gap: 18px;
 }
 
 nav a {
 color: white;
 text-decoration: none;
-margin: 8px;
 font-weight: bold;
 }
 
+nav a:hover {
+color: #ffcccc;
+}
+
 .hero {
-background: linear-gradient(135deg, #b90000, #ffffff);
-padding: 65px 20px;
+background: linear-gradient(135deg, #a90000, #e33b3b, white);
+padding: 85px 20px;
 text-align: center;
 }
 
 .hero-content {
 background: white;
-padding: 35px 20px;
-border-radius: 15px;
-max-width: 650px;
+max-width: 700px;
 margin: auto;
+padding: 45px 25px;
+border-radius: 15px;
 }
 
 .hero h1 {
 color: #b90000;
-font-size: 34px;
+font-size: 42px;
 margin-bottom: 15px;
 }
 
 .hero p {
-line-height: 1.7;
-margin-bottom: 20px;
+margin-bottom: 25px;
+font-size: 17px;
 }
 
 .btn {
 display: inline-block;
 background: #b90000;
 color: white;
-padding: 13px 25px;
-border-radius: 7px;
 text-decoration: none;
+padding: 12px 24px;
+border-radius: 7px;
+font-weight: bold;
+margin-top: 12px;
+}
+
+.btn:hover {
+background: #800000;
 }
 
 section {
-padding: 50px 20px;
+padding: 65px 7%;
 text-align: center;
 }
 
-h2 {
+.section-title {
 color: #b90000;
-margin-bottom: 20px;
+font-size: 32px;
+margin-bottom: 15px;
+}
+
+.about {
+background: white;
 }
 
 .products {
@@ -88,28 +120,38 @@ background: #fff5f5;
 
 .product-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 20px;
-max-width: 1000px;
-margin: 30px auto;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 25px;
+max-width: 1100px;
+margin: 35px auto 0;
 }
 
 .product-card {
 background: white;
-padding: 25px;
-border-radius: 12px;
+border-radius: 14px;
+padding: 18px;
 border: 1px solid #f0dada;
-box-shadow: 0 5px 15px rgba(185,0,0,0.1);
+box-shadow: 0 5px 18px rgba(185,0,0,0.10);
+transition: transform 0.3s;
 }
 
-.product-icon {
-font-size: 40px;
-margin-bottom: 12px;
+.product-card:hover {
+transform: translateY(-5px);
+}
+
+.product-card img {
+width: 100%;
+height: 190px;
+object-fit: contain;
+border-radius: 9px;
+margin-bottom: 15px;
+background: #fffafa;
 }
 
 .product-card h3 {
 color: #b90000;
-margin-bottom: 15px;
+font-size: 21px;
+margin-bottom: 12px;
 }
 
 .product-card ul {
@@ -117,26 +159,64 @@ list-style: none;
 }
 
 .product-card li {
-padding: 10px;
-border-bottom: 1px solid #f2dada;
+padding: 8px;
+border-bottom: 1px solid #f3e1e1;
+}
+
+.contact {
+background: white;
+}
+
+.contact p {
+margin-bottom: 12px;
 }
 
 footer {
 background: #b90000;
 color: white;
-padding: 25px;
 text-align: center;
-line-height: 1.8;
+padding: 25px 15px;
 }
 
-@media(max-width: 500px) {
+footer p {
+margin: 5px;
+}
+
+.whatsapp-float {
+position: fixed;
+bottom: 22px;
+right: 22px;
+background: #128c45;
+color: white;
+text-decoration: none;
+padding: 14px 19px;
+border-radius: 30px;
+font-weight: bold;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+z-index: 100;
+}
+
+@media(max-width: 600px) {
+header {
+justify-content: center;
+text-align: center;
+}
+
+nav {
+justify-content: center;
+gap: 12px;
+}
+
 .hero h1 {
+font-size: 29px;
+}
+
+.section-title {
 font-size: 27px;
 }
 
-nav a {
-display: inline-block;
-font-size: 14px;
+section {
+padding: 45px 18px;
 }
 }
 </style>
@@ -144,8 +224,11 @@ font-size: 14px;
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 <div class="logo">ROSAGS LIQUOR</div>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
@@ -154,102 +237,201 @@ font-size: 14px;
 </nav>
 </header>
 
+<!-- HOME -->
+
 <div class="hero" id="home">
 <div class="hero-content">
+
 <h1>Welcome to ROSAGS LIQUOR</h1>
+
 <p>
 Your trusted destination for quality wines,
 champagnes, soft drinks and bottled water.
+Discover our collection and get in touch with us.
 </p>
-<a href="#products" class="btn">Explore Our Products</a>
+
+<a href="#products" class="btn">
+Explore Our Products
+</a>
+
 </div>
 </div>
 
-<section id="about">
-<h2>About Us</h2>
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="section-title">About ROSAGS LIQUOR</h2>
+
 <p>
-At ROSAGS LIQUOR, we are committed to offering
+At ROSAGS LIQUOR, we are committed to providing
 quality beverages and excellent customer service.
+We offer a selection of wines, champagnes,
+soft drinks and bottled water.
 </p>
+
 </section>
 
+<!-- PRODUCTS -->
+
 <section class="products" id="products">
-<h2>OUR PRODUCTS</h2>
-<p>Explore our product collection.</p>
+
+<h2 class="section-title">OUR PRODUCTS</h2>
+
+<p>
+Explore our beverage collection.
+Contact us for product availability and prices.
+</p>
 
 <div class="product-grid">
 
+<!-- WINES -->
+
 <div class="product-card">
-<div class="product-icon">🍷</div>
-<h3>WINES</h3><img src="images/wines.jpg"
-alt="Wines at ROSAGS LIQUOR"
-style="width:100%; border-radius:10px;">
+
+<img src="images/wines.jpg"
+alt="Wines at ROSAGS LIQUOR">
+
+<h3>WINES</h3>
+
 <ul>
 <li>Four Cousins</li>
 <li>Nederburg</li>
 <li>Blossom Hill</li>
 <li>Carlo Rossi</li>
 </ul>
+
+<a class="btn"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20enquire%20about%20your%20wines."
+target="_blank">
+Enquire About Wines
+</a>
+
 </div>
 
+<!-- CHAMPAGNES -->
+
 <div class="product-card">
-<div class="product-icon">🥂</div>
+
+<img src="images/champagnes.jpg"
+alt="Champagnes at ROSAGS LIQUOR">
+
 <h3>CHAMPAGNES</h3>
+
 <ul>
 <li>Golden Pride</li>
 <li>Blue Cocktail</li>
 </ul>
+
+<a class="btn"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20enquire%20about%20your%20champagnes."
+target="_blank">
+Enquire About Champagnes
+</a>
+
 </div>
 
+<!-- SOFT DRINKS -->
+
 <div class="product-card">
-<div class="product-icon">🥤</div>
+
+<img src="images/soft-drinks.jpg"
+alt="Soft drinks at ROSAGS LIQUOR">
+
 <h3>SOFT DRINKS</h3>
+
 <ul>
 <li>Coca-Cola</li>
 <li>Fanta</li>
 <li>Sprite</li>
 <li>Malt</li>
 </ul>
+
+<a class="btn"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20enquire%20about%20your%20soft%20drinks."
+target="_blank">
+Enquire About Soft Drinks
+</a>
+
 </div>
 
+<!-- BOTTLED WATER -->
+
 <div class="product-card">
-<div class="product-icon">💧</div>
+
+<img src="images/water.jpg"
+alt="Bottled water at ROSAGS LIQUOR">
+
 <h3>BOTTLED WATER</h3>
+
 <ul>
 <li>Bel-Aqua</li>
 <li>Verna</li>
 <li>Perla</li>
 </ul>
+
+<a class="btn"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20enquire%20about%20your%20bottled%20water."
+target="_blank">
+Enquire About Water
+</a>
+
 </div>
 
 </div>
+
 </section>
 
-<section id="contact">
-<section id="contact">
-<h2>CONTACT ROSAGS LIQUOR</h2>
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">CONTACT US</h2>
 
 <p>
 Interested in any of our products?
-Contact us to enquire about availability
-and prices.
 </p>
 
-<br>
+<p>
+Contact ROSAGS LIQUOR for enquiries about
+product availability and prices.
+</p>
 
-<a
-href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20enquire%20about%20a%20product.%20Kindly%20let%20me%20know%20its%20availability%20and%20price."
-class="btn"
+<a class="btn"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20would%20like%20to%20make%20a%20product%20enquiry."
 target="_blank">
-Enquire on WhatsApp
+Chat With Us on WhatsApp
 </a>
+
 </section>
 
+<!-- FOOTER -->
 
 <footer>
-<p>ROSAGS LIQUOR © 2026</p>
-<p>Enjoy responsibly. Alcohol products are for adults of legal drinking age only.</p>
+
+<p><strong>ROSAGS LIQUOR</strong></p>
+
+<p>Quality Beverages. Excellent Service.</p>
+
+<p>
+&copy; 2026 ROSAGS LIQUOR.
+All Rights Reserved.
+</p>
+
+<p>
+Alcohol products are for adults of legal drinking age only.
+Enjoy responsibly.
+</p>
+
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+
+<a class="whatsapp-float"
+href="https://wa.me/233593963211?text=Hello%20ROSAGS%20LIQUOR%2C%20I%20have%20a%20product%20enquiry."
+target="_blank">
+WhatsApp Us
+</a>
 
 </body>
 </html>
